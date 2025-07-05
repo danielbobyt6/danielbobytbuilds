@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tus Servicios de Constructor en Bloxburg</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fuente Inter para una mejor legibilidad */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Un fondo suave */
+            color: #334155; /* Texto principal oscuro */
+        }
+        /* Estilos personalizados para la barra de navegación */
+        .navbar {
+            background-color: #4f46e5; /* Morado vibrante */
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #6366f1; /* Un tono más claro al pasar el ratón */
+        }
+        /* Estilos para secciones */
+        section {
+            padding: 2rem 1rem;
+            margin-bottom: 1rem;
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #1e293b; /* Títulos más oscuros */
+            font-weight: 700; /* bold */
+        }
+        .btn-primary {
+            background-color: #4f46e5;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem; /* rounded-lg */
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #6366f1;
+        }
+        /* Estilos para la galería de imágenes */
+        .gallery-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px; /* Altura fija para las imágenes */
+            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* Estilos para testimonios */
+        .testimonial-card {
+            background-color: #f8fafc; /* Fondo muy claro */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <a href="#inicio" class="text-2xl font-bold mb-2 sm:mb-0">Bloxburg Builds</a>
+            <div class="flex flex-wrap justify-center gap-2">
+                <a href="#inicio">Inicio</a>
+                <a href="#construcciones">Mis Construcciones</a>
+                <a href="#precios">Servicios y Precios</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4">
+
+        <!-- Sección de Inicio -->
+        <section id="inicio" class="text-center">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">¡Construyendo tus Sueños en Bloxburg!</h1>
+            <p class="text-lg sm:text-xl mb-6">
+                ¿Buscas la casa perfecta en Bloxburg pero no tienes tiempo o la inspiración para construirla?
+                ¡Estás en el lugar correcto! Ofrezco servicios profesionales de construcción de casas,
+                desde acogedoras cabañas hasta impresionantes mansiones, todo con dinero del juego.
+            </p>
+            <a href="#construcciones" class="btn-primary inline-block">Ver Mis Construcciones</a>
+        </section>
+
+        <!-- Sección de Mis Construcciones (Galería) -->
+        <section id="construcciones">
+            <h2 class="text-3xl font-bold mb-6 text-center">Mis Construcciones Destacadas</h2>
+            <div class="gallery-grid">
+                <!-- Tu Mansión Moderna REAL -->
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/yKyMpf9.png" alt="Mi Mansión Moderna en Bloxburg" class="w-full h-48 object-cover rounded-lg mb-2">
+                    <h3 class="text-xl font-semibold mb-1">Mansión Moderna</h3>
+                    <p class="text-gray-600 text-sm">Un diseño elegante con amplios espacios y acabados de lujo.</p>
+                </div>
+                <!-- Tu Casa Familiar Clásica REAL -->
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/6UoIyoy.png" alt="Mi Casa Familiar Clásica en Bloxburg" class="w-full h-48 object-cover rounded-lg mb-2">
+                    <h3 class="text-xl font-semibold mb-1">Casa Familiar Clásica</h3>
+                    <p class="text-gray-600 text-sm">Acogedora y funcional, perfecta para la vida en familia.</p>
+                </div>
+                <!-- Tu Cabaña Rústica REAL -->
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/gkmhekF.png" alt="Mi Cabaña Rústica en Bloxburg" class="w-full h-48 object-cover rounded-lg mb-2">
+                    <h3 class="text-xl font-semibold mb-1">Cabaña Rústica</h3>
+                    <p class="text-gray-600 text-sm">Un refugio encantador con toques naturales y ambiente relajado.</p>
+                </div>
+                <!-- Tu Villa de Playa REAL -->
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/8hhx20e.png" alt="Mi Villa de Playa en Bloxburg" class="w-full h-48 object-cover rounded-lg mb-2">
+                    <h3 class="text-xl font-semibold mb-1">Villa de Playa</h3>
+                    <p class="text-gray-600 text-sm">Diseño fresco y luminoso, ideal para disfrutar del sol y el mar.</p>
+                </div>
+                <!-- Puedes añadir más imágenes aquí copiando y pegando los bloques 'div class="gallery-item"' -->
+            </div>
+        </section>
+
+        <!-- Sección de Servicios y Precios -->
+        <section id="precios">
+            <h2 class="text-3xl font-bold mb-6 text-center">Mis Servicios y Precios (Dinero de Bloxburg)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Paquete Básico -->
+                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center">
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Paquete Básico</h3>
+                    <p class="text-lg mb-2">Ideal para casas pequeñas o renovaciones simples.</p>
+                    <p class="text-4xl font-extrabold text-indigo-600 mb-4">150k - 300k</p>
+                    <p class="text-gray-600 mb-4">(Dinero de Bloxburg)</p>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-4">
+                        <li>Diseño de 1-2 habitaciones</li>
+                        <li>Amueblado básico</li>
+                        <li>Construcción rápida</li>
+                    </ul>
+                    <a href="#contacto" class="btn-primary inline-block">¡Contratar!</a>
+                </div>
+                <!-- Paquete Estándar -->
+                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center">
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Paquete Estándar</h3>
+                    <p class="text-lg mb-2">Para casas medianas con detalles personalizados.</p>
+                    <p class="text-4xl font-extrabold text-indigo-600 mb-4">300k - 600k</p>
+                    <p class="text-gray-600 mb-4">(Dinero de Bloxburg)</p>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-4">
+                        <li>Diseño de 3-5 habitaciones</li>
+                        <li>Amueblado detallado</li>
+                        <li>Jardinería básica</li>
+                        <li>Diseño interior personalizado</li>
+                    </ul>
+                    <a href="#contacto" class="btn-primary inline-block">¡Contratar!</a>
+                </div>
+                <!-- Paquete Premium -->
+                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center">
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Paquete Premium</h3>
+                    <p class="text-lg mb-2">Mansiones y proyectos complejos con lujo y estilo.</p>
+                    <p class="text-4xl font-extrabold text-indigo-600 mb-4">600k+</p>
+                    <p class="text-gray-600 mb-4">(Dinero de Bloxburg)</p>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-4">
+                        <li>Diseño de 6+ habitaciones</li>
+                        <li>Amueblado de lujo y avanzado</li>
+                        <li>Paisajismo completo</li>
+                        <li>Características especiales (piscinas, sótanos, etc.)</li>
+                        <li>Soporte post-construcción</li>
+                    </ul>
+                    <a href="#contacto" class="btn-primary inline-block">¡Contratar!</a>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-6">
+                *Los precios son estimados y pueden variar según la complejidad y los detalles específicos de tu proyecto.
+                ¡Contáctame para una cotización personalizada!
+            </p>
+        </section>
+
+        <!-- Sección de Testimonios -->
+        <section id="testimonios">
+            <h2 class="text-3xl font-bold mb-6 text-center">Lo que dicen mis Clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <p class="italic text-gray-700 mb-3">"¡Increíble trabajo! Mi casa quedó exactamente como la imaginé, y el proceso fue muy rápido. ¡Totalmente recomendado!"</p>
+                    <p class="font-semibold text-right">- Lekzo3000</p>
+                </div>
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <p class="italic text-gray-700 mb-3">"Excelente comunicación y atención al detalle. Mi mansión es la envidia de todos en Bloxburg. ¡Gracias!"</p>
+                    <p class="font-semibold text-right">- luna_andre12</p>
+                </div>
+                <!-- Puedes añadir más testimonios aquí -->
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="text-center">
+            <h2 class="text-3xl font-bold mb-6">¡Contáctame para tu Próxima Construcción!</h2>
+            <p class="text-lg mb-4">
+                ¿Listo para tener la casa de tus sueños en Bloxburg? ¡Es muy fácil contactarme!
+            </p>
+            <div class="bg-indigo-50 p-6 rounded-xl inline-block shadow-md">
+                <p class="text-xl font-semibold mb-2">Mi nombre de usuario en Roblox:</p>
+                <p class="text-3xl font-extrabold text-indigo-700">Danielbobyt</p>
+                <p class="text-sm text-gray-600 mt-2">
+                    (Por favor, envíame un mensaje directo en Roblox o una solicitud de amistad y especifica que me contactas por un servicio de construcción.)
+                </p>
+            </div>
+            <p class="text-md text-gray-500 mt-6">
+                ¡Espero construir para ti pronto!
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8 rounded-t-xl">
+        <p>&copy; 2025 Tus Servicios de Constructor en Bloxburg. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
