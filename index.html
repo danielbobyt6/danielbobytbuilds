@@ -6,72 +6,207 @@
     <title>Tus Servicios de Constructor en Bloxburg</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins para títulos, Inter para el cuerpo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Fuente Inter para una mejor legibilidad */
+        /* Fuentes */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Un fondo suave */
+            background: linear-gradient(to bottom right, #e0e7ff, #f0f4f8); /* Degradado suave de fondo */
             color: #334155; /* Texto principal oscuro */
         }
-        /* Estilos personalizados para la barra de navegación */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif; /* Fuente más impactante para títulos */
+            color: #2c3e50; /* Títulos más oscuros y definidos */
+            font-weight: 800; /* Extra bold para los títulos */
+        }
+
+        /* Estilos de la barra de navegación */
         .navbar {
-            background-color: #4f46e5; /* Morado vibrante */
+            background-color: #5a67d8; /* Un morado/índigo más suave */
             color: white;
             padding: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+            border-bottom-left-radius: 1rem; /* Bordes redondeados en la parte inferior */
+            border-bottom-right-radius: 1rem;
         }
         .navbar a {
             color: white;
             text-decoration: none;
             padding: 0.5rem 1rem;
-            border-radius: 0.375rem; /* rounded-md */
-            transition: background-color 0.3s ease;
+            border-radius: 0.5rem; /* Más redondeado */
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .navbar a:hover {
-            background-color: #6366f1; /* Un tono más claro al pasar el ratón */
+            background-color: #7f8cfc; /* Un tono más claro al pasar el ratón */
+            transform: translateY(-2px); /* Pequeño efecto de elevación */
         }
+
         /* Estilos para secciones */
         section {
-            padding: 2rem 1rem;
-            margin-bottom: 1rem;
+            padding: 2.5rem 1.5rem; /* Más padding */
+            margin-bottom: 1.5rem; /* Más espacio entre secciones */
             background-color: white;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem; /* Más redondeado */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra más suave y extendida */
         }
-        h1, h2 {
-            color: #1e293b; /* Títulos más oscuros */
-            font-weight: 700; /* bold */
-        }
+
+        /* Botones primarios */
         .btn-primary {
-            background-color: #4f46e5;
+            background-color: #5a67d8;
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem; /* rounded-lg */
-            transition: background-color 0.3s ease;
+            padding: 0.85rem 1.75rem; /* Más padding */
+            border-radius: 0.75rem; /* Más redondeado */
+            transition: all 0.3s ease; /* Transición suave para todos los cambios */
+            font-weight: 600; /* Semibold */
         }
         .btn-primary:hover {
-            background-color: #6366f1;
+            background-color: #7f8cfc;
+            transform: translateY(-3px); /* Efecto de elevación más notorio */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
         }
+
         /* Estilos para la galería de imágenes */
         .gallery-grid {
             display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+            gap: 1.25rem; /* Más espacio entre imágenes */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas con tamaño mínimo ajustado */
+        }
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más fuerte */
         }
         .gallery-item img {
             width: 100%;
-            height: 200px; /* Altura fija para las imágenes */
-            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 220px; /* Altura ligeramente mayor para las imágenes */
+            object-fit: cover;
+            border-radius: 0.75rem; /* Más redondeado */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Estilos para tarjetas de precios */
+        .price-card {
+            background-color: #f8fafc; /* Fondo muy claro */
+            padding: 1.8rem; /* Más padding */
+            border: 1px solid #e2e8f0; /* Borde sutil */
+            border-radius: 1rem; /* Más redondeado */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .price-card h3 {
+            color: #4f46e5; /* Morado para títulos de precios */
+            font-weight: 700;
+        }
+        .price-card .price {
+            color: #6366f1; /* Morado más claro para precios */
+            font-size: 3.5rem; /* Precio más grande */
+            font-weight: 900;
+        }
+        .vip-card {
+            background: linear-gradient(145deg, #fcd34d 0%, #fbbf24 100%); /* Degradado dorado para VIP */
+            color: #78350f; /* Texto oscuro para VIP */
+            border: 2px solid #b45309; /* Borde más fuerte */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .vip-card h3 {
+            color: #b45309; /* Color dorado oscuro */
+        }
+        .vip-card .price {
+            color: #d97706; /* Color dorado más vibrante */
+        }
+        .vip-card .text-gray-600 { /* Ajuste de color para el texto (Dinero de Bloxburg) en VIP */
+            color: #78350f;
+        }
+        .vip-card .list-disc { /* Ajuste de color para la lista en VIP */
+            color: #78350f;
+        }
+
         /* Estilos para testimonios */
         .testimonial-card {
-            background-color: #f8fafc; /* Fondo muy claro */
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+            padding: 1.8rem; /* Más padding */
+            border-radius: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             margin-bottom: 1rem;
+            border-left: 6px solid #5a67d8; /* Barra de color más pronunciada */
+        }
+        .testimonial-card p.italic {
+            color: #475569; /* Texto testimonial ligeramente más oscuro */
+            font-size: 1.05rem; /* Texto ligeramente más grande */
+        }
+        .testimonial-card p.font-semibold {
+            color: #5a67d8; /* Color del nombre del cliente */
+        }
+
+        /* Estilos para la sección de descuentos */
+        .discount-input {
+            padding: 0.85rem 1.25rem; /* Más padding */
+            border: 1px solid #cbd5e0;
+            border-radius: 0.75rem; /* Más redondeado */
+            width: 100%;
+            max-width: 280px; /* Ancho ligeramente mayor */
+            margin-right: 0.75rem; /* Más espacio */
+            font-size: 1.05rem;
+            color: #334155;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .discount-input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3); /* Sombra al enfocar */
+        }
+        .discount-message {
+            margin-top: 1.25rem; /* Más espacio */
+            font-size: 1.1rem; /* Texto más grande */
+            font-weight: 700; /* Bold */
+        }
+        .discount-message.success {
+            color: #10b981;
+        }
+        .discount-message.error {
+            color: #ef4444;
+        }
+        .text-sm.text-gray-500.mt-4 { /* Mensaje de validación de descuento */
+            color: #64748b; /* Gris más oscuro */
+        }
+
+        /* Estilos para la sección de contacto */
+        .contact-info-box {
+            background-color: #e0e7ff; /* Fondo más claro y suave */
+            padding: 2rem; /* Más padding */
+            border-radius: 1.25rem; /* Más redondeado */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+            display: inline-block; /* Para que el fondo se ajuste al contenido */
+        }
+        .contact-info-box p.text-xl {
+            color: #4f46e5; /* Morado para el texto */
+            font-weight: 700;
+        }
+        .contact-info-box p.text-3xl {
+            color: #6366f1; /* Morado más claro para el nombre de usuario */
+            font-weight: 900;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        .contact-info-box p.text-sm {
+            color: #64748b; /* Gris más oscuro */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #334155; /* Gris oscuro para el footer */
+            color: white;
+            text-align: center;
+            padding: 1.5rem; /* Más padding */
+            margin-top: 2rem; /* Más espacio arriba */
+            border-top-left-radius: 1rem; /* Bordes redondeados en la parte superior */
+            border-top-right-radius: 1rem;
         }
     </style>
 </head>
@@ -85,6 +220,7 @@
                 <a href="#inicio">Inicio</a>
                 <a href="#construcciones">Mis Construcciones</a>
                 <a href="#precios">Servicios y Precios</a>
+                <a href="#descuentos">Descuentos</a>
                 <a href="#testimonios">Testimonios</a>
                 <a href="#contacto">Contacto</a>
             </div>
@@ -141,10 +277,10 @@
             <h2 class="text-3xl font-bold mb-6 text-center">Mis Servicios y Precios (Dinero de Bloxburg)</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"> <!-- Cambiado a 4 columnas para el VIP -->
                 <!-- Paquete Básico -->
-                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center">
-                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Paquete Básico</h3>
+                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center price-card">
+                    <h3 class="text-2xl font-bold mb-3">Paquete Básico</h3>
                     <p class="text-lg mb-2">Ideal para casas pequeñas o renovaciones simples.</p>
-                    <p class="text-4xl font-extrabold text-indigo-600 mb-4">30k - 60k</p>
+                    <p class="text-4xl font-extrabold mb-4 price">30k - 60k</p>
                     <p class="text-gray-600 mb-4">(Dinero de Bloxburg)</p>
                     <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-4">
                         <li>Diseño de 1-2 habitaciones</li>
@@ -154,10 +290,10 @@
                     <a href="#contacto" class="btn-primary inline-block">¡Contratar!</a>
                 </div>
                 <!-- Paquete Estándar -->
-                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center">
-                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Paquete Estándar</h3>
+                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center price-card">
+                    <h3 class="text-2xl font-bold mb-3">Paquete Estándar</h3>
                     <p class="text-lg mb-2">Para casas medianas con detalles personalizados.</p>
-                    <p class="text-4xl font-extrabold text-indigo-600 mb-4">60k - 150k</p>
+                    <p class="text-4xl font-extrabold mb-4 price">60k - 150k</p>
                     <p class="text-gray-600 mb-4">(Dinero de Bloxburg)</p>
                     <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-4">
                         <li>Diseño de 3-5 habitaciones</li>
@@ -168,10 +304,10 @@
                     <a href="#contacto" class="btn-primary inline-block">¡Contratar!</a>
                 </div>
                 <!-- Paquete Premium -->
-                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center">
-                    <h3 class="text-2xl font-bold mb-3 text-indigo-700">Paquete Premium</h3>
+                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center price-card">
+                    <h3 class="text-2xl font-bold mb-3">Paquete Premium</h3>
                     <p class="text-lg mb-2">Mansiones y proyectos complejos con lujo y estilo.</p>
-                    <p class="text-4xl font-extrabold text-indigo-600 mb-4">350k+</p>
+                    <p class="text-4xl font-extrabold mb-4 price">350k+</p>
                     <p class="text-gray-600 mb-4">(Dinero de Bloxburg)</p>
                     <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-4">
                         <li>Diseño de 6+ habitaciones</li>
@@ -183,16 +319,16 @@
                     <a href="#contacto" class="btn-primary inline-block">¡Contratar!</a>
                 </div>
                 <!-- NUEVO: Paquete VIP -->
-                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center bg-yellow-50">
-                    <h3 class="text-2xl font-bold mb-3 text-yellow-700">Paquete VIP</h3>
+                <div class="p-6 border border-gray-200 rounded-xl shadow-sm text-center vip-card price-card">
+                    <h3 class="text-2xl font-bold mb-3">Paquete VIP</h3>
                     <p class="text-lg mb-2">¡La experiencia definitiva! Construcción totalmente personalizada.</p>
-                    <p class="text-4xl font-extrabold text-yellow-600 mb-4">450k+</p>
+                    <p class="text-4xl font-extrabold mb-4 price">450k+</p>
                     <p class="text-gray-600 mb-4">(Dinero de Bloxburg)</p>
                     <ul class="list-disc list-inside text-left mx-auto max-w-xs mb-4">
                         <li>Diseño y construcción a tu medida</li>
                         <li>Amueblado exclusivo y avanzado</li>
-                        <li>Paisajismo de ensueño</li>
-                        <li>Características especiales ilimitadas</li>
+                        <li>Paisajismo completo</li>
+                        <li>Características especiales (piscinas, sótanos, etc.)</li>
                         <li>Asesoramiento y soporte premium</li>
                         <li>¡Hacemos lo que tú quieras!</li>
                     </ul>
@@ -202,6 +338,23 @@
             <p class="text-center text-gray-500 mt-6">
                 *Los precios son estimados y pueden variar según la complejidad y los detalles específicos de tu proyecto.
                 ¡Contáctame para una cotización personalizada!
+            </p>
+        </section>
+
+        <!-- Sección de Códigos de Descuento -->
+        <section id="descuentos" class="text-center">
+            <h2 class="text-3xl font-bold mb-6">Códigos de Descuento</h2>
+            <p class="text-lg mb-4">¿Tienes un código de descuento? ¡Ingrésalo aquí!</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2">
+                <input type="text" id="discountCodeInput" placeholder="Introduce tu código" class="discount-input">
+                <button id="applyDiscountBtn" class="btn-primary">Aplicar Código</button>
+            </div>
+            <div id="discountMessage" class="discount-message"></div>
+            <div id="discountedPriceDisplay" class="mt-4 text-xl font-bold text-indigo-700 hidden">
+                Precio con descuento: <span id="finalPrice"></span>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">
+                Para validar tu descuento, por favor, contáctame en Roblox (Danielbobyt) y dime que ya canjeaste tu código.
             </p>
         </section>
 
@@ -229,9 +382,9 @@
             <p class="text-lg mb-4">
                 ¿Listo para tener la casa de tus sueños en Bloxburg? ¡Es muy fácil contactarme!
             </p>
-            <div class="bg-indigo-50 p-6 rounded-xl inline-block shadow-md">
+            <div class="contact-info-box">
                 <p class="text-xl font-semibold mb-2">Mi nombre de usuario en Roblox:</p>
-                <p class="text-3xl font-extrabold text-indigo-700">Danielbobyt</p>
+                <p class="text-3xl font-extrabold mb-4">Danielbobyt</p>
                 <p class="text-sm text-gray-600 mt-2">
                     (Por favor, envíame un mensaje directo en Roblox o una solicitud de amistad y especifica que me contactas por un servicio de construcción.)
                 </p>
@@ -247,5 +400,56 @@
         <p>&copy; 2025 Tus Servicios de Constructor en Bloxburg. Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        document.getElementById('applyDiscountBtn').addEventListener('click', function() {
+            const codeInput = document.getElementById('discountCodeInput');
+            const messageDisplay = document.getElementById('discountMessage');
+            const discountedPriceDisplay = document.getElementById('discountedPriceDisplay');
+            const finalPriceSpan = document.getElementById('finalPrice');
+            const code = codeInput.value.trim().toUpperCase(); // Convertir a mayúsculas para no distinguir entre mayúsculas y minúsculas
+
+            // Códigos de descuento de ejemplo
+            const discountCodes = {
+                "BIENVENIDO10": { type: "percentage", value: 0.10, appliesTo: "general" }, // 10% de descuento
+                "CONSTRUCTORPRO": { type: "percentage", value: 0.15, appliesTo: "general" }, // 15% de descuento
+                "MEGAHOUSE20": { type: "percentage", value: 0.20, appliesTo: "general" }, // 20% de descuento
+                "LILDIOR90K": { type: "fixed", value: 90000, appliesTo: "vip" } // Nuevo código VIP: 90k Bloxbucks de rebaja
+            };
+
+            messageDisplay.classList.remove('success', 'error');
+            discountedPriceDisplay.classList.add('hidden');
+
+            if (discountCodes[code]) {
+                const discount = discountCodes[code];
+                let basePriceForCalculation;
+                let priceDescription = "Bloxbucks (ejemplo)";
+
+                if (discount.appliesTo === "vip") {
+                    basePriceForCalculation = 450000; // Precio base de referencia para el paquete VIP
+                    priceDescription = "Bloxbucks (ejemplo VIP)";
+                    // Asegurarse de que el descuento no haga el precio negativo
+                    const calculatedPrice = Math.max(0, basePriceForCalculation - discount.value);
+                    finalPriceSpan.textContent = `${calculatedPrice.toLocaleString()} ${priceDescription}`;
+                    messageDisplay.textContent = `¡Código "${code}" aplicado! Obtienes una rebaja de ${discount.value.toLocaleString()} Bloxbucks en el paquete VIP.`;
+                } else {
+                    basePriceForCalculation = 100000; // Precio base de referencia para otros paquetes
+                    const calculatedPrice = basePriceForCalculation * (1 - discount.value);
+                    finalPriceSpan.textContent = `${calculatedPrice.toLocaleString()} ${priceDescription}`;
+                    messageDisplay.textContent = `¡Código "${code}" aplicado! Obtienes un ${discount.value * 100}% de descuento.`;
+                }
+
+                messageDisplay.classList.add('success');
+                discountedPriceDisplay.classList.remove('hidden');
+
+            } else if (code === "") {
+                messageDisplay.textContent = "Por favor, introduce un código de descuento.";
+                messageDisplay.classList.add('error');
+            } else {
+                messageDisplay.textContent = `El código "${code}" no es válido.`;
+                messageDisplay.classList.add('error');
+            }
+        });
+    </script>
 </body>
 </html>
+
